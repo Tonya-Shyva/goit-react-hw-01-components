@@ -1,9 +1,4 @@
-import Profile from 'components/profile/Profile';
-import user from './profile/user.json';
-import Statistics from './statistics/Statistics';
-import statsData from './statistics/data.json';
-
-export const App = () => {
+export const App = ({ children }) => {
   return (
     <div
       style={{
@@ -15,14 +10,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Profile
-        avatar={user.avatar}
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        stats={user.stats}
-      />
-      <Statistics title="Upload stats" stats={statsData} />
+      {children}
     </div>
   );
 };
