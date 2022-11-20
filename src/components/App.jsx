@@ -1,4 +1,5 @@
 import { Profile } from 'components/profile/Profile';
+import user from './profile/user.json';
 
 export const App = () => {
   return (
@@ -12,7 +13,13 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Profile />
+      <Profile
+        avatar={user.avatar}
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        stats={user.stats}
+      />
     </div>
   );
 };
