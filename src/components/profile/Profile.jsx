@@ -1,15 +1,7 @@
+import PropTypes from 'prop-types';
 import css from './Profile.module.css';
-// import user from './user.json';
 
-// const props = {
-//   avatar: user.avatar,
-//   username: user.username,
-//   tag: user.tag,
-//   location: user.location,
-//   stats: user.stats,
-// };
-
-export function Profile({ avatar, username, tag, location, stats }) {
+export default function Profile({ avatar, username, tag, location, stats }) {
   //   const { avatar, username, tag, location, stats } = props;
   return (
     <div className={css.profile}>
@@ -21,15 +13,15 @@ export function Profile({ avatar, username, tag, location, stats }) {
       </div>
 
       <ul className={css.stats}>
-        <li className={css.statsItemFollovers}>
+        <li className={css.statsItem}>
           <span className={css.label}>Followers</span>
           <span className={css.quantity}>{stats.followers}</span>
         </li>
-        <li className={css.statsItemViews}>
+        <li className={css.statsItem}>
           <span className={css.label}>Views</span>
           <span className={css.quantity}>{stats.views}</span>
         </li>
-        <li className={css.statsItemLikes}>
+        <li className={css.statsItem}>
           <span className={css.label}>Likes</span>
           <span className={css.quantity}>{stats.likes}</span>
         </li>
@@ -37,3 +29,11 @@ export function Profile({ avatar, username, tag, location, stats }) {
     </div>
   );
 }
+
+Profile.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired,
+};
