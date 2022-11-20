@@ -1,12 +1,14 @@
-import { Profile } from 'components/profile/Profile';
+import Profile from 'components/profile/Profile';
 import user from './profile/user.json';
+import Statistics from './statistics/Statistics';
+import statsData from './statistics/data.json';
 
 export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -20,6 +22,7 @@ export const App = () => {
         location={user.location}
         stats={user.stats}
       />
+      <Statistics title="Upload stats" stats={statsData} />
     </div>
   );
 };
