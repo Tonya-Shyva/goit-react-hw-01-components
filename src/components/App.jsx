@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const App = ({ children }) => {
+export default function App({ children }) {
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ export const App = ({ children }) => {
       {children}
     </div>
   );
-};
+}
 
 // для children propTypes не обов'язкові
 App.propTypes = {
