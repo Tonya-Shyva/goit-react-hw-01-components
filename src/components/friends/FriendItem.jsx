@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import css from './FriendsList.module.css';
 
 export default function FriendItem({ avatar, isOnline, name }) {
+  // console.log(css[isOnline]);
   return (
     <li className={css.friendItem}>
-      <span className={isOnline ? css.online : css.offline}></span>
+      <span className={`${css.friendStatus} ${css[isOnline]}`}></span>
       <img
         className={css.friendAvatar}
         src={avatar}
