@@ -1,6 +1,16 @@
-import PropTypes from 'prop-types';
+import Profile from './profile/Profile';
+import user from './profile/user.json';
 
-export default function App({ children }) {
+import Statistics from './statistics/Statistics';
+import statsData from './statistics/data.json';
+
+import FriendsList from './friends/FriendsList';
+import friends from './friends/friends.json';
+
+import TransactionHistory from './transactions/TransactionHistory';
+import transactions from './transactions/transactions.json';
+
+export default function App() {
   return (
     <div
       style={{
@@ -12,12 +22,22 @@ export default function App({ children }) {
         color: '#010101',
       }}
     >
-      {children}
+      <Profile
+        avatar={user.avatar}
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        stats={user.stats}
+      />
+      <Statistics title="Upload stats" stats={statsData} />
+      <Statistics stats={statsData} />
+      <FriendsList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 }
 
-// для children propTypes не обов'язкові
-App.propTypes = {
-  children: PropTypes.node,
-};
+// // для children propTypes не обов'язкові
+// App.propTypes = {
+//   children: PropTypes.node,
+// };
