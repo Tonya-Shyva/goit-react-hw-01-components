@@ -4,7 +4,7 @@ import user from './profile/user.json';
 import Statistics from './statistics/Statistics';
 import statsData from './statistics/data.json';
 
-import FriendsList from './friends/FriendsList';
+import FriendList from './friends/FriendsList';
 import friends from './friends/friends.json';
 
 import TransactionHistory from './transactions/TransactionHistory';
@@ -31,7 +31,7 @@ export default function App() {
       />
       <Statistics title="Upload stats" stats={statsData} />
       <Statistics stats={statsData} />
-      <FriendsList friends={friends} />
+      <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
     </div>
   );
